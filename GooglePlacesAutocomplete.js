@@ -240,8 +240,9 @@ export const GooglePlacesAutocomplete = forwardRef((props, ref) => {
         return;
       }
 
+      if (props.hideKeyboardAfterSelection) {
       Keyboard.dismiss();
-
+      }
       _abortRequests();
 
       // display loader
@@ -899,6 +900,7 @@ GooglePlacesAutocomplete.propTypes = {
   textInputHide: PropTypes.bool,
   textInputProps: PropTypes.object,
   timeout: PropTypes.number,
+  hideKeyboardAfterSelection: PropTypes.bool,
 };
 
 GooglePlacesAutocomplete.defaultProps = {
@@ -942,6 +944,7 @@ GooglePlacesAutocomplete.defaultProps = {
   textInputHide: false,
   textInputProps: {},
   timeout: 20000,
+  hideKeyboardAfterSelection: true
 };
 
 export default { GooglePlacesAutocomplete };
